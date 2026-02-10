@@ -374,7 +374,7 @@ public class Sudoku {
     	        if (errori >= erroriMax) System.out.println("Hai perso.\n");
     	        if (uguali) {
     	        	System.out.println("Hai vinto!\n");
-    	        	System.out.println(stampaSudoku(sudoku));
+    	        	System.out.println(stampaSudoku(sudoku) +"\n");
     	        }
     	        
     	        
