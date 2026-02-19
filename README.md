@@ -1,1 +1,1 @@
-A sudoku cli game made in java 
+A sudoku game made in java 
