@@ -24,6 +24,7 @@ public class Sudoku {
 	    			t.next();
 	    		}
 	    		azione = t.nextInt();
+	    		t.nextLine();
 	    		
 	    		if (azione != 0 && azione != 1) {
 	    			System.out.println("Opzione non valida.");
@@ -58,6 +59,8 @@ public class Sudoku {
         			    t.next();
         			}
     	        	difficolta = t.nextInt();
+    	        	t.nextLine();
+    	        	
 					if (difficolta < 1 || difficolta > 5) {
 						System.out.println("Valore fuori range.\n");
     	        	}
@@ -72,6 +75,7 @@ public class Sudoku {
 	        			    t.next();
 	        			}
 	        			visibilita = t.nextDouble();
+	        			t.nextLine();
 	        			
 	        			if (visibilita < 0 || visibilita > 100) {
 	        				System.out.println("Valore fuori range.\n");
@@ -86,6 +90,7 @@ public class Sudoku {
 	        			    t.next();
 	        			}
 	        			erroriMax = t.nextInt();
+	        			t.nextLine();
 	        			
 	        			if (erroriMax < 1 || erroriMax > 1000) {
 	        				System.out.println("Valore fuori range.\n");
@@ -108,7 +113,6 @@ public class Sudoku {
 	        	
     	        //gioco vero e proprio
     	        System.out.println("Premi invio per GIOCARE!");
-    	        t.nextLine();
 	        	t.nextLine();
 	        	
     	        boolean confermato;
@@ -143,6 +147,7 @@ public class Sudoku {
         		    			t.next();
         		    		}
         	        		num = t.nextInt();
+        	        		t.nextLine();
         	        		
         	        		if (num < 1 || num > 9) {
         	        			System.out.println("Valore fuori range.\n");
@@ -159,6 +164,7 @@ public class Sudoku {
         		    			t.next();
         		    		}
         	        		rigaSel = t.nextInt();
+        	        		t.nextLine();
         	        		
         	        		if (rigaSel < 0 || rigaSel > 9) {
         	        			System.out.println("Valore fuori range.");
@@ -177,6 +183,7 @@ public class Sudoku {
             		    			t.next();
             		    		}
             	        		colonnaSel = t.nextInt();
+            	        		t.nextLine();
             	        		
             	        		if (colonnaSel < 0 || colonnaSel > 9) {
             	        			System.out.println("Valore fuori range.");
@@ -210,7 +217,6 @@ public class Sudoku {
     	        	
     	        	if (!uguali) {
     	        		System.out.println("\nPremere invio per continuare.");
-    	        		t.nextLine();
         	        	t.nextLine();
     	        	}
     	        	
@@ -241,7 +247,6 @@ public class Sudoku {
     	        
     	        
     	        System.out.println("\nPremere invio per continuare.");
-        		t.nextLine();
 	        	t.nextLine();
 	        	
 	        	
