@@ -19,7 +19,7 @@ public class Sudoku {
         	do {
 	    		System.out.print("\nInserisci: ");
 	    		while(!t.hasNextInt()) {
-	    			System.out.println("Opzione non valida.");
+	    			System.out.println("Valore non valido.");
 	    			System.out.print("\nInserisci: ");
 	    			t.next();
 	    		}
