@@ -7,7 +7,7 @@ public class Sudoku {
     	Scanner t = new Scanner(System.in);
     	int azione;
     	
-    	System.out.println("\n--- Benvenuto a SUDOKU made by Scianny ---\n");
+    	System.out.println("\n--- Benvenuto al SUDOKU made by Scianny ---\n");
     	
     	do {
     		System.out.println("-- Menu iniziale --\n");
