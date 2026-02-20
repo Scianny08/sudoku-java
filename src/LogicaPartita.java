@@ -105,7 +105,7 @@ public class LogicaPartita {
 	    			    x++;
 	    			}
 	    			tentativi++;
-        		} while (trovato && tentativi <= 100);
+        		} while (trovato && tentativi <= 50);
         		
         		//STEP 6
         		if (tentativi < 100) {
