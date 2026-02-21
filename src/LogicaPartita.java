@@ -4,19 +4,17 @@ public class LogicaPartita {
 	private Griglia griglia;
 	private Griglia grigliaIrrisolta;
 	private Difficolta difficolta;
+	private int[] numMancanti;
 	
 	public LogicaPartita() {
 		griglia = new Griglia();
 		grigliaIrrisolta = new Griglia();
 		difficolta = new Difficolta(1, 0);
+		numMancanti = new int[9];
 	}
 
 	public Griglia getGriglia() {
 		return griglia;
-	}
-
-	public void setGriglia(Griglia griglia) {
-		this.griglia = griglia;
 	}
 	
 	public Difficolta getDifficolta() {
@@ -105,10 +103,10 @@ public class LogicaPartita {
 	    			    x++;
 	    			}
 	    			tentativi++;
-        		} while (trovato && tentativi <= 50);
+        		} while (trovato && tentativi < 50);
         		
         		//STEP 6
-        		if (tentativi < 100) {
+        		if (tentativi < 50) {
         			griglia.setValoreCella(nuovaCella, rig, col);
         		} else {
         			for (i=0; i<DIM; i++) {
@@ -185,27 +183,40 @@ public class LogicaPartita {
 		}
 	}
 	
-	public String numMancantiToString() {
-		int i, rig, col;
+	public int[] calcolaNumMancati() {
+		int i, rig, col, valore;
 		final int DIM = griglia.getDIM();
-		int numMancanti;
+		
+		for (i=0; i<9; i++) {
+	        numMancanti[i] = 9;
+	    }
+		
+		for (rig=0; rig<DIM; rig++) {
+        	for (col=0; col<DIM; col++) {
+        		valore = grigliaIrrisolta.getValoreCella(rig, col);
+        		//se la cella non è vuota posso contarla
+        		if (valore > 0) {
+        			numMancanti[valore-1]--;
+        		}
+        	}
+    	}
+		
+		return numMancanti;
+	}
+	
+	public String numMancantiToString() {
+		int i;
 		String s = "";
 		
 		s += "Numeri:  ";
     	for (i=1; i<=9; i++) s += String.format("%2d", i);
     	s += "\n";
     	
+    	numMancanti = calcolaNumMancati();
+    	
     	s += "Mancanti:";
-    	for (i=1; i<=9; i++) {
-    		numMancanti = 9;
-    		for (rig=0; rig<DIM; rig++) {
-	        	for (col=0; col<DIM; col++) {
-	        		if (grigliaIrrisolta.getValoreCella(rig, col) == i) {
-	        			numMancanti--;
-	        		}
-	        	}
-	        }
-    		s += String.format("%2d", numMancanti);
+    	for (i=0; i<9; i++) {
+    		s += String.format("%2d", numMancanti[i]);
     	}
     	
     	return s;
