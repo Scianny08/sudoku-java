@@ -230,7 +230,6 @@ public class Sudoku {
     	        	System.out.println("Hai perso.");
     	        }
     	        if (uguali) {
-    	        	
     	        	System.out.println(logica.getGriglia().toString() +"\n");
     	        	System.out.println("Hai vinto!");
     	        }
