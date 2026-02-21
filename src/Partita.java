@@ -16,6 +16,10 @@ public class Partita {
 		this.errori = errori;
 	}
 	
+	public LogicaPartita getLogica() {
+		return log;
+	}
+	
 	//true non ho ancora perso
 	//false se sono >=
 	public boolean checkErrori() {
@@ -23,17 +27,14 @@ public class Partita {
 	}
 	
 	public boolean areGriglieUguali() {
-		int rig, col;
 		final int DIM = log.getGriglia().getDIM();
-		
-		for (rig=0; rig<DIM; rig++) {
-			for (col=0; col<DIM; col++) {
+		for (int rig=0; rig < DIM; rig++) {
+			for (int col=0; col < DIM; col++) {
 				if (log.getGriglia().getValoreCella(rig, col) != log.getGrigliaIrrisolta().getValoreCella(rig, col)) {
 					return false;
 				}
 			}
 		}
-		
 		return true;
 	}
 	
