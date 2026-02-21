@@ -30,8 +30,8 @@ public class Griglia {
 		return DIM;
 	}
 
-	public void setDIM(int dIM) {
-		DIM = dIM;
+	public void setDIM(int DIM) {
+		this.DIM = DIM;
 	}
 
 	public boolean isEmpty() {
