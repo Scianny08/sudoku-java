@@ -1,4 +1,3 @@
-//composizione: Griglia è una matrice di Celle, le Celle esistono indipendentemente da Griglia
 
 public class Griglia {
 	private Cella[][] griglia;
