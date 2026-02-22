@@ -40,7 +40,7 @@ public class Partita {
 	
 	public int mossa(int val, int rigSel, int colSel) {
 		//se fuori range
-		if ((rigSel < 1 || rigSel > 9) || ((colSel < 1 || colSel > 9))) {
+		if ((rigSel < 1 || rigSel > 9) || (colSel < 1 || colSel > 9)) {
 			return -2;
 		}
 		
