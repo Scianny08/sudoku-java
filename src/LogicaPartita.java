@@ -1,4 +1,3 @@
-//associazione: LogicaPartita usa Griglia ma Griglia esiste indipendentemente da LogicaPartita
 
 public class LogicaPartita {
 	private Griglia griglia;
