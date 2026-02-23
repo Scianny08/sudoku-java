@@ -101,19 +101,13 @@ public class Sudoku {
     	        } else {
     	        	logica.generaSudokuIrrisolto(difficolta);
     	        }
+
     	        
-    	        if (difficolta == 5) {
-    	        	if (visibilita != 1) {
-    	    	        System.out.println();
-        	        }
-    	        } else {
-    	        	System.out.println();
-    	        }
-    	        
-	        	
     	        //gioco vero e proprio
-    	        System.out.println("Premi invio per GIOCARE!");
+    	        System.out.print("\nPremi invio per GIOCARE!");
 	        	t.nextLine();
+	        	
+	        	if (visibilita != 1) System.out.println();
 	        	
     	        boolean confermato;
     	        boolean uguali;
