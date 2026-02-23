@@ -153,6 +153,7 @@ public class LogicaPartita {
 	}
 	
 	public void generaSudokuIrrisolto(double visibilita, int erroriMax) {
+		visibilita = visibilita / 100;
 		difficolta = new Difficolta(visibilita, erroriMax);
 		irrisolutore();
 	}
