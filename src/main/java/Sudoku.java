@@ -238,7 +238,6 @@ public class Sudoku {
     	        System.out.println("\nPremere invio per continuare.");
 	        	t.nextLine();
 	        	
-	        	
     	        for (i=0; i<50; i++) System.out.print("-");
     	        System.out.println("\n");
     	        
