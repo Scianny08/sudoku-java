@@ -101,13 +101,19 @@ public class Sudoku {
     	        } else {
     	        	logica.generaSudokuIrrisolto(difficolta);
     	        }
-
     	        
-    	        //gioco vero e proprio
-    	        System.out.print("\nPremi invio per GIOCARE!");
-	        	t.nextLine();
+    	        if (difficolta == 5) {
+    	        	if (visibilita != 1) {
+    	    	        System.out.println();
+        	        }
+    	        } else {
+    	        	System.out.println();
+    	        }
+    	        
 	        	
-	        	if (visibilita != 1) System.out.println();
+    	        //gioco vero e proprio
+    	        System.out.println("Premi invio per GIOCARE!");
+	        	t.nextLine();
 	        	
     	        boolean confermato;
     	        boolean uguali;
@@ -115,11 +121,12 @@ public class Sudoku {
     	        int num;
     	        int i;
     	        int esitoMossa = 10;
-    	        
-    	        long inizioTempo = System.currentTimeMillis();
-    	        
+
     	        uguali = partita.areGriglieUguali();
     	        
+				Tempo tempo = new Tempo();
+				tempo.inizio();
+
     	        while(partita.checkErrori() && !uguali) {
     	        	for (i=0; i<50; i++) System.out.print("-");
     	        	
@@ -147,7 +154,6 @@ public class Sudoku {
         	        			System.out.println("Valore fuori range.\n");
         	        		}
         	        	} while (num < 1 || num > 9);
-        	        	
         	        	
         	        	System.out.println("Seleziona la posizione del numero (0 per annullare l'inserimento):");
         	        	do {
@@ -200,7 +206,6 @@ public class Sudoku {
         	        		System.out.println();
         	        	}
         	        	
-        	        	
     	        	} while (!confermato);
     	        	
     	        	System.out.println();
@@ -228,16 +233,7 @@ public class Sudoku {
     	        	System.out.println("Hai vinto!");
     	        }
     	        
-    	        
-    	        long fineTempo = System.currentTimeMillis();
-    	        long millisecondiTotali = fineTempo - inizioTempo;
-    	        
-    	        long secondiTotali = millisecondiTotali / 1000;
-    	        long minuti = secondiTotali / 60;
-    	        long secondi = secondiTotali % 60;
-    	        
-    	        System.out.println("Tempo di gioco: " + minuti + "m " + secondi + "s");
-    	        
+				System.out.println(tempo.toString());
     	        
     	        System.out.println("\nPremere invio per continuare.");
 	        	t.nextLine();
