@@ -1,3 +1,4 @@
+
 public class Tempo {
     private long inizio;
     private long inizioPausa;
