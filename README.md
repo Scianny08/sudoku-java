@@ -98,4 +98,4 @@ java -cp out Sudoku
 
 ## 📄 Licenza
 
-Questo progetto è a scopo didattico.
+GPL-3.0
